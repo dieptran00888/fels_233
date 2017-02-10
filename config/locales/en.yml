@@ -39,3 +39,5 @@ en:
     home:
       title: "Home"
       content: "Home page"
+  change_config_email:
+    "please-change-me-at-config-initializers-devise@example.com"
