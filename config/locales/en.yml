@@ -21,3 +21,21 @@
 
 en:
   hello: "Hello world"
+  base_title: "Framgia E-Learning"
+  layouts:
+    footer:
+      link_about: "About"
+      name: "Framgia E-Learning"
+    header:
+      logo: "FELS233"
+      link_home: "Home"
+      link_login: "Login"
+      link_logout: "Logout"
+      link_signup: "Sign up"
+  static_pages:
+    about:
+      title: "About"
+      content: "About page"
+    home:
+      title: "Home"
+      content: "Home page"
