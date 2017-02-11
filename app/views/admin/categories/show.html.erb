@@ -1,0 +1,11 @@
+<div id="div-show-category">
+  <div id="div-new-word">
+    <%= render "admin/words/word_form", word: @word,
+      category_id: @category.id %>
+  </div>
+  <div id="div-list-word">
+    <% if @words.any? %>
+      <%= render @words %>
+    <% end %>
+  </div>
+</div>

@@ -23,9 +23,13 @@ en:
   hello: "Hello world"
   base_title: "Framgia E-Learning"
   admin:
+    category_not_found: "Category not found"
     create_new_category_success_msg: "New category created successfully!"
     application:
       flash_error: "Record not found"
+    create_new_word_success_msg: "New word created"
+    answer_count_error_message: "count can't be lower than %{min_valid_answers}"
+    correct_answer_count_error_message: "must have 1 correct answer."
     categories:
       index:
         category_index_title: "Categories Management"
@@ -35,6 +39,11 @@ en:
       form:
         duration_title: "Duration (minutes)"
         label_word_per_lesson: "Words  per lesson"
+    words:
+      word_form:
+        content_label: "Content"
+        button_add_answer: "Add answer"
+        button_add_word: "Add word"
   layouts:
     footer:
       link_about: "About"
@@ -61,3 +70,6 @@ en:
     error_messages:
       form_error_msg: "The form contains"
       error: "error"
+  button_remove: "Remove"
+  button_save: "Save"
+  button_delete: "Delete"
