@@ -1,0 +1,26 @@
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top nht-navbar">
+  <div class="container">
+    <div class="navbar-header page-scroll">
+      <p id="title", class="navbar-brand page-scroll">
+        <%= link_to t(:title), root_url, class: "navbar-brand page-scroll nht-title" %>
+      </p>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active nht-header-item" id="_home">
+          <%= link_to t(:home), "#home", class: "page-scroll" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nht-header-item" id="_signout">
+            <%= link_to t("sessions.sign_out"),
+              destroy_user_session_path, method: :delete, class: "page-scroll" %>
+          </li>
+        <% else %>
+          <li class="nht-header-item" id="_signin">
+            <%= link_to t("sessions.sign_in"), new_user_session_path, class: "page-scroll" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

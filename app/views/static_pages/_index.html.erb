@@ -1,0 +1,105 @@
+<!-- Profile -->
+<div class="w3-container w3-content nht-profile-home">
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+          <h4 class="w3-center"><%= current_user.name %></h4>
+          <p class="w3-center">
+            <%= image_tag "https://goo.gl/FmJsq6",
+              class: "w3-circle nht-profile-avatar", alt: "Avatar" %>
+          </p>
+          <div class="nht-follow-detail">
+            <span class="nht-followed">
+              <%= current_user.following.size %> <%= t "user.followed" %>
+            </span>
+            <span class="nht-follower">
+              <%= current_user.followers.size %> <%= t "user.followers" %>
+            </span>
+            <div class="clearfix"></div>
+          </div>
+          <hr>
+          <p>
+            <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>      
+          </p>
+        </div>
+      </div>
+      <br>
+
+      <!-- Accordion -->
+      <div class="w3-card-2 w3-round">
+        <div class="w3-accordion w3-white">
+          <button onclick="myFunction('Demo1')"
+            class="w3-btn-block w3-theme-l1 w3-left-align">
+            <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>
+            <%= t "home.group" %>
+          </button>
+          <div id="Demo1" class="w3-accordion-content w3-container">
+            <p><%= t "home.text" %></p>
+          </div>
+          <button onclick="myFunction('Demo2')"
+            class="w3-btn-block w3-theme-l1 w3-left-align">
+            <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>
+            <%= t "home.events" %>
+          </button>
+          <div id="Demo2" class="w3-accordion-content w3-container">
+            <p><%= t "home.text" %></p>
+          </div>
+          <button onclick="myFunction('Demo3')"
+            class="w3-btn-block w3-theme-l1 w3-left-align">
+            <i class="fa fa-users fa-fw w3-margin-right"></i>
+            <%= t "home.photos" %>
+          </button>
+          <div id="Demo3" class="w3-accordion-content w3-container">
+            <div class="w3-row-padding">
+              <br>
+              <div class="w3-half">
+                <img src="http://www.w3schools.com/css/img_fjords.jpg"
+                  class="w3-margin-bottom width">
+              </div>
+              <div class="w3-half">
+                <img src="http://www.w3schools.com/css/img_fjords.jpg"
+                  class="w3-margin-bottom width">
+              </div>
+              <div class="w3-half">
+                <img src="http://www.w3schools.com/css/img_fjords.jpg"
+                  class="w3-margin-bottom width">
+              </div>
+              <div class="w3-half">
+                <img src="http://www.w3schools.com/css/img_fjords.jpg"
+                  class="w3-margin-bottom width">
+              </div>
+              <div class="w3-half">
+                <img src="http://www.w3schools.com/css/img_fjords.jpg"
+                  class="w3-margin-bottom width">
+              </div>
+              <div class="w3-half">
+                <img src="http://www.w3schools.com/css/img_fjords.jpg"
+                  class="w3-margin-bottom width">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Interests -->
+      <div class="w3-card-2 w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p><%= t "profile.interests" %></p>
+        </div>
+      </div>
+      <br>
+    <!-- End Left Column -->
+
+    <!-- Middle Column -->
+
+    <!-- Right Column -->
+    <!-- End Right Column -->
+  <!-- End Grid -->
+  </div>
+<!-- End Page Container -->
+</div>

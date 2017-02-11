@@ -1,0 +1,43 @@
+.nht-profile-home {
+  max-width: 1400px !important;
+  margin-top: 80px !important;
+
+  .nht-profile-avatar {
+    height: 106px;
+    width: 106px;
+  }
+
+  .nht-follow-detail{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-family: Verdana,sans-serif;
+
+    .nht-followed {
+      float: left;
+      font-size: 15px;
+    }
+
+    .nht-follower {
+      float: right;
+      font-size: 15px;
+      text-align: right;
+    }
+  }
+
+  .nht-review-index {
+    margin-top: 0px !important;
+    padding-top: 5px;
+
+    .nht-review {
+      margin: 0 -16px;
+    }
+
+    .nht-btn-like-cmt {
+      float: right;
+    }
+  }
+
+  .nht-reviews {
+    text-align: center;
+  }
+}
