@@ -69,6 +69,15 @@
             <div class="col-md-12">
               <span class="signup-sbtn"><%= t "signup.or" %></span>
             </div>
+            <% if devise_mapping.omniauthable? %>
+              <% resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to omniauth_authorize_path(resource_name, provider),
+                  class: "btn btn-primary signup-sbtn" do %>
+                  <i class="fa fa-<%= provider %>"></i>
+                  <%= t "signup.with", provider: provider %>
+                <% end %>
+              <% end %>
+            <% end %>
           </div>
         <% end %>
       </div>
