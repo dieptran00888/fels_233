@@ -1,0 +1,21 @@
+<div class="result-item" xmlns="http://www.w3.org/1999/html">
+  <div class="item-header">
+    <%= "#{f.index+1}. " %>
+    <%= f.object.word.content %>
+  </div>
+  <div class="item-content">
+    <% f.object.word.answers.each_with_index do |answer| %>
+      <div>
+        <label>
+          <% if f.object.lesson.finished? %>
+            <%= f.radio_button :answer_id, answer.id, disabled: "disabled" %>
+          <% else %>
+            <%= f.radio_button :answer_id, answer.id %>
+          <% end %>
+          <%= answer.content %>
+          <%= correct_answer f.object, answer %>
+        </label>
+        </div>
+    <% end %>
+  </div>
+</div>
