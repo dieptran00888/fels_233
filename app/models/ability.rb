@@ -3,7 +3,7 @@ class Ability
 
   def initialize user
     if user.is_admin?
-      can :manage, Category
+      can :manage, [Category, Word]
     else
       can :update, User
     end

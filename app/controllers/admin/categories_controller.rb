@@ -19,6 +19,12 @@ class Admin::CategoriesController < ApplicationController
       format.js
     end
   end
+
+  def show
+    @word = Word.new
+    Settings.mininum_answers_count.times {@word.answers.build}
+    @words = @category.words
+  end
   
   private
   def category_params

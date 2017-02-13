@@ -15,3 +15,27 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('#div-list-word').on('click', '.word-item-flip', function () {
+    $(this).siblings('.word-item-panel').slideToggle('slow');
+  });
+
+  $('#div-show-category').on('click', '.remove-answer-row', function () {
+    var count = $(this).parent().siblings('.answer-row:visible').length + 1;
+    if(count <= 2) {
+      alert('Each word must have at least 2 answers');
+    } else {
+      $(this).prev('input[type=hidden]').val('1');
+      $(this).closest('.answer-row').hide();
+    }
+  }).on('click', '.check-correct', function () {
+    $(this).parent().siblings('.answer-row:visible').
+    children('.check-correct').prop('checked', false);
+  }).on('click', '.btn-add-answer', function (event) {
+    event.preventDefault();
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp,time));
+  });
+});
