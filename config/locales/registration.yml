@@ -5,3 +5,5 @@ en:
     confirmation: "Password confirmation"
     name: Name
     email: Email
+    or: "Or"
+    with: "Sign up with %{provider}"

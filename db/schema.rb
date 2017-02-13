@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20170210040355) do
     t.string   "name"
     t.string   "image"
     t.boolean  "is_admin"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

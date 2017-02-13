@@ -1,0 +1,54 @@
+#loginbox {
+  margin-top:50px;
+}
+.panel-body {
+  padding-top:30px;
+}
+.input-group {
+  margin-bottom: 5px;
+  margin-right: 40px;
+}
+
+.social-buttons{
+  margin: 20px 0;
+}
+.social-buttons a{
+  width: 30%;
+  margin: 0 10px;
+}
+.btn-facebook{
+  color: #fff;
+  background-color:#3b5998;
+}
+.btn-facebook:hover{
+  color: #fff;
+  background-color:#496ebc;
+}
+
+/* signup */
+#signupbox {
+  margin-top: 50px;
+}
+
+#signin-button {
+  float:right;
+  font-size: 120%;
+  position: relative;
+  top:-20px;
+}
+#social-signup {
+  border-top: 1px solid #999;
+  padding-top:20px;
+}
+
+.signup {
+  margin: 10px 0;
+}
+#pw-field {
+  margin-top: 30px;
+}
+
+.signup-sbtn {
+  margin: 0 10px;
+  width: 40%;
+}
