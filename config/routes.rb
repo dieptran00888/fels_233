@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :words, only: [:create, :update]
   end
   resources :users
+  resources :relationships, only: [:create, :destroy]
 end
