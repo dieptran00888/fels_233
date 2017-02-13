@@ -1,0 +1,19 @@
+<h1>
+  <%= t ".category_index_title" %>
+</h1>
+<%= link_to t(".create_new_category"), new_admin_category_path,
+  data: {toggle: "modal", target: "#category-modal"},
+  class: "btn btn-primary" %>
+
+<div id="category-index-list">
+  <% if @categories.any? %>
+    <%= render @categories %>
+  <% end %>
+</div>
+
+<div id="category-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>

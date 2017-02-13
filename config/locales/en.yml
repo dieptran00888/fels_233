@@ -22,6 +22,19 @@
 en:
   hello: "Hello world"
   base_title: "Framgia E-Learning"
+  admin:
+    create_new_category_success_msg: "New category created successfully!"
+    application:
+      flash_error: "Record not found"
+    categories:
+      index:
+        category_index_title: "Categories Management"
+        create_new_category: "Create category"
+      new_form:
+        new_category_title: "New Category"
+      form:
+        duration_title: "Duration (minutes)"
+        label_word_per_lesson: "Words  per lesson"
   layouts:
     footer:
       link_about: "About"
@@ -41,3 +54,10 @@ en:
       content: "Home page"
   change_config_email:
     "please-change-me-at-config-initializers-devise@example.com"
+  button_edit: "Edit"
+  button_cancel: "Cancel"
+  button_create: "Create"
+  shared:
+    error_messages:
+      form_error_msg: "The form contains"
+      error: "error"

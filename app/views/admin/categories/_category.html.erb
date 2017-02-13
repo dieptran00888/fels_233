@@ -1,0 +1,11 @@
+<% if category.present? %>
+  <div id="category-item-<%= category.id %>">
+    <%= category.name %>
+    <%= category.duration %>
+    <%= category.word_per_lesson %>
+    <%= link_to t("button_edit"), edit_admin_category_path(category),
+      data: {toggle: "modal", target: "#category-modal"},
+      class: "btn btn-primary" %>
+    <br>
+  </div>
+<% end %>
