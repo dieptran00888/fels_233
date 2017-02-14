@@ -7,7 +7,10 @@
 
 <div id="category-index-list">
   <% if @categories.any? %>
-    <%= render @categories %>
+    <% @categories.each do |category| %>
+      <%= render "category", category: category %>
+    <% end %>
+    <%= will_paginate @categories %>
   <% end %>
 </div>
 

@@ -1,0 +1,7 @@
+$('#word-item-<%= @word.id %> #div-error-messages').html(
+  '<%= j render "shared/error_messages", object: @word %>');
+<% unless @word.errors.any? %>
+  $('#word-item-<%= @word.id %> .word-item-panel').slideToggle('slow');
+  $('#word-item-<%= @word.id %> .word-item-flip').html(
+    '<%= @word.content %>');
+<% end %>
