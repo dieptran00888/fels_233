@@ -8,3 +8,5 @@ en:
     name: Name
     success: "Success"
     fail: "Fail"
+    unfollow: "Unfollow"
+    follow: "Follow"

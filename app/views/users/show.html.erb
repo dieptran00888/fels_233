@@ -3,6 +3,7 @@
 
     <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-lg-4 col-md-offset-0 col-lg-offset-0">
       <div class="w3-white w3-text-grey w3-card-4 td-user-profile-detail">
+        <%= render "follow_form" unless current_user.is_admin? %>
         <div class="w3-display-container">
           <%= image_tag "https://goo.gl/FmJsq6" %>
           <div class="w3-display-bottomleft w3-container w3-text-black">
