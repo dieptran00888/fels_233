@@ -73,3 +73,34 @@ en:
   button_remove: "Remove"
   button_save: "Save"
   button_delete: "Delete"
+  controllers:
+    lessons:
+      lesson_finished_error_message: "Fail"
+      category_not_found: "Category not found"
+  helpers:
+    lessons_helper:
+      button_start: "Start"
+      button_view: "View"
+      button_continue: "Continue"
+      status_new: "New"
+      status_finished: "Finished"
+      status_in_progress: "In Progress"
+  button_finish: "Finish"
+  categories:
+    show:
+      label_word_per_lesson: "Words per lesson"
+      duration_title: "Duration"
+      link_words: "Words"
+      link_lessons: "Lessons"
+      lessons_table_created_date: "Created date"
+      lessons_table_category: "Category"
+      lessons_table_status: "Status"
+      lessons_table_spent_time: "Spent time"
+      lessons_table_score: "Score"
+  create_lesson: "Create Lesson"
+  lessons:
+    show:
+      progress: "Progress"
+      score: "Score"
+      time_remaining: "Time remaining"
+  back: "Back"

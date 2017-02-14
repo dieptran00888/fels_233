@@ -1,0 +1,43 @@
+<div class="container">
+  <%= form_for @lesson do |f| %>
+    <div class="lesson-progress-column">
+      <% if @lesson.finished? %>
+        <div class="score">
+          <p><%= t ".score" %></p>
+          <span>
+            <%= "#{@lesson.score}/#{@lesson.category.word_per_lesson}" %>
+          </span>
+        </div>
+        <div class="btn-result">
+          <%= link_to t("back"), @lesson.category,
+            class: "btn btn-primary btn-back" %>
+        </div>
+      <% else %>
+        <div class="sidebar-result">
+          <div class="time-remaining">
+            <p><%= t ".time_remaining" %></p>
+            <div id="lesson-countdown"></div>
+          </div>
+          <div id="lesson-progress">
+            <span><%= t ".progress" %></span><br>
+            <div class="progressing">
+              <span id="number-select">0</span>
+              <span><%= "/ #{@lesson.category.word_per_lesson}" %></span>
+            </div>
+          </div>
+          <%= hidden_field :duration, "lesson",
+            value: (@lesson.finish_time - Time.now).to_i %>
+          <%= f.submit t("button_finish"),
+            class: "btn btn-primary finish-lesson" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="result-right">
+      <div class="result-list">
+        <%= f.fields_for :results do |builder| %>
+          <%= render "result", f: builder %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
