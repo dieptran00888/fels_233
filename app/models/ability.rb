@@ -6,6 +6,8 @@ class Ability
       can :manage, [Category, Word]
     else
       can :update, User
+      can :show, Category
+      can [:create, :update, :show], Lesson
     end
   end
 end
