@@ -369,3 +369,73 @@ footer {
 .word-item-panel {
   display: none;
 }
+
+.item-header {
+  font-weight: bold;
+  font-size: 24px;
+}
+.glyphicon.glyphicon-remove {
+  color: red;
+}
+
+.glyphicon.glyphicon-ok {
+  color: #4CAF50;
+}
+
+.lesson-progress-column {
+  position: fixed;
+  top: 52px;
+  bottom: 0px;
+  width: 170px;
+  background-color: white;
+  box-shadow: 0.3125rem 0 1.25rem 0 rgba(0,0,0,0.28);
+}
+
+.result-right {
+  padding-top: 10px;
+  padding-left: 25px;
+  margin-bottom: 30px;
+  margin-left: 200px;
+  background-color: white;
+}
+
+.score {
+  text-align: center;
+  padding-top: 100px;
+  span {
+    font-weight: 600;
+    font-size: 40px;
+  }
+}
+
+.sidebar-result {
+  padding-top: 100px;
+}
+
+.btn-result, .sidebar-result {
+  text-align: center;
+}
+
+.result-item .item-content {
+  padding-bottom: 20px;
+}
+
+#lesson-progress {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.progressing {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+
+.time-remaining {
+  background: silver;
+  #lesson-countdown {
+    font-weight: 800;
+    font-size: 50px;
+  }
+  box-shadow: inset 0 0 10px #000000;
+}
