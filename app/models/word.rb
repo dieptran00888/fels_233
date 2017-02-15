@@ -12,6 +12,39 @@ class Word < ApplicationRecord
   validate :valid_number_answers
   validate :valid_corect_answers
 
+  scope :search_words, ->(search_value, category_id) {joins(:answers).
+    where("words.content LIKE ? AND category_id = ? AND is_correct = ?",
+    "%#{search_value}%", category_id, true).
+    select("words.content as w_content, answers.content as a_content")}
+
+  scope :find_all, ->(user_id, category_id){joins(:answers).
+    where("category_id = ? AND is_correct = ?", category_id, true).
+    select "words.content, answers.content as a_content, words.created_at"}
+
+  scope :alphabet, ->{order content: :asc}
+  scope :newest, ->{order created_at: :desc}
+  scope :oldest, ->{order created_at: :asc}
+
+  scope :learned_words, ->(user_id, category_id){
+    where "words.id IN (SELECT r.word_id FROM results r JOIN lessons l
+      ON r.lesson_id = l.id join answers a ON r.answer_id = a.id WHERE
+      l.user_id = ? AND l.category_id = ? AND a.is_correct = ?)",
+        user_id, category_id, true}
+
+  scope :not_learned_words, ->(user_id, category_id){
+    where "words.id NOT IN (SELECT r.word_id FROM results r JOIN lessons l
+      ON r.lesson_id = l.id join answers a ON r.answer_id = a.id WHERE
+      l.user_id = ? AND l.category_id = ? AND a.is_correct = ?)",
+        user_id, category_id, true}
+
+  class << self
+    def search search_value, category_id
+      words = if search_value
+        search_words search_value, category_id
+      end
+    end
+  end
+
   private
   def valid_number_answers
     min = Settings.mininum_answers_count

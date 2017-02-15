@@ -1,0 +1,27 @@
+<%= form_tag category_path(params[:id]), method: :get, remote: true,
+  class: "input-group col-md-12", id: "word-search-form" do %>
+  <div class="col-md-5 ">
+    <label class="checkbox-inline">
+      <%= radio_button_tag :filter, :learned_words, 
+        id: "filter_learned_words" %>
+      <%= t ".learn_checkbox" %>
+    </label>
+    <label class="checkbox-inline">
+      <%= radio_button_tag :filter, :not_learned_words,
+        id: "filter_not_learned_words" %>
+      <%= t ".not_learned_checkbox" %>
+    </label>
+    <label class="checkbox-inline">
+      <%= radio_button_tag :filter, :find_all, true, id: "filter_find_all" %>
+      <%= t ".all" %>
+    </label>
+  </div>
+  <div class="col-md-4">
+    <%= text_field_tag :search, params[:search], placeholder: t("search"),
+      class: "form-control txtSearch" %>
+  </div>
+  <div class="col-md-3">
+    <%= select_tag :select, options_for_select([:alphabet, :newest, :oldest]),
+      class: "form-control", id: "select" %>
+  </div>
+<% end %>
