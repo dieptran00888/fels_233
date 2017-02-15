@@ -28,6 +28,9 @@ $(document).on('turbolinks:load', function() {
   $('input:radio').change(function () {
     $('#number-select').html($(":radio:checked").length);
   })
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    $(this).removeData('bs.modal');
+  });
 
   $('#div-list-word').on('click', '.word-item-flip', function () {
     $(this).siblings('.word-item-panel').slideToggle('slow');

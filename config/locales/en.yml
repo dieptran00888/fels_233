@@ -25,6 +25,8 @@ en:
   admin:
     category_not_found: "Category not found"
     create_new_category_success_msg: "New category created successfully!"
+    edit_category_success_message: "Updated!"
+    delete_category_success_message: "Category deleted"
     application:
       flash_error: "Record not found"
     create_new_word_success_msg: "New word created"
@@ -39,6 +41,8 @@ en:
       form:
         duration_title: "Duration (minutes)"
         label_word_per_lesson: "Words  per lesson"
+      edit_form:
+        edit_category_title: "Edit Category"
     words:
       word_form:
         content_label: "Content"
@@ -104,3 +108,5 @@ en:
       score: "Score"
       time_remaining: "Time remaining"
   back: "Back"
+  delete: "Delete"
+  confirm_delete_message: "You sure ?"
