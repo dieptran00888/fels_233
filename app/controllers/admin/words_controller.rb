@@ -15,6 +15,20 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def update
+    @word.update_attributes word_params
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    @word.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
   def word_params
     params.require(:word).permit :category_id, :content,

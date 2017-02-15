@@ -24,6 +24,8 @@ gem "font-awesome-rails"
 gem "config"
 gem "omniauth"
 gem "omniauth-facebook"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
 
 group :development, :test do
   gem "byebug", platform: :mri

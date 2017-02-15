@@ -4,8 +4,15 @@
       category_id: @category.id %>
   </div>
   <div id="div-list-word">
-    <% if @words.any? %>
-      <%= render @words %>
-    <% end %>
+    <div id="words-content">
+      <% if @support.words.any? %>
+        <% @support.words.each do |word| %>
+          <%= render "admin/words/word", word: word %>
+        <% end %>
+        <div class="text-center">
+          <%= will_paginate @support.words %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

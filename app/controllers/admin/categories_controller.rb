@@ -1,8 +1,11 @@
 class Admin::CategoriesController < ApplicationController
   load_and_authorize_resource
 
+  before_action :category_supports, only: :show
+
   def index
-    @categories = Category.all
+    @categories = Category.paginate page: params[:page],
+      per_page: Settings.per_page_users
   end
 
   def new
@@ -36,7 +39,6 @@ class Admin::CategoriesController < ApplicationController
   def show
     @word = Word.new
     Settings.mininum_answers_count.times {@word.answers.build}
-    @words = @category.words
   end
 
   def destroy
@@ -50,5 +52,9 @@ class Admin::CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit :name, :duration, :word_per_lesson
+  end
+
+  def category_supports
+    @support = Supports::Category_Support.new @category, params
   end
 end
