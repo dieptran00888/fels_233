@@ -26,6 +26,7 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
+gem "ransack"
 
 group :development, :test do
   gem "byebug", platform: :mri

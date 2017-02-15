@@ -101,6 +101,12 @@ en:
       lessons_table_status: "Status"
       lessons_table_spent_time: "Spent time"
       lessons_table_score: "Score"
+    index:
+      link_category: "Categories"
+    category:
+      learn_button: "Learn"
+    search_form:
+      search_button: "Search"
   create_lesson: "Create Lesson"
   lessons:
     show:
@@ -110,3 +116,4 @@ en:
   back: "Back"
   delete: "Delete"
   confirm_delete_message: "You sure ?"
+  search: "Search..."
