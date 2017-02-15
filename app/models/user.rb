@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :destroy
   has_many :activities, dependent: :destroy
 
+  validates :name, presence: true, length: {maximum: 50}
+  ATTRIBUTES_PARAMS = [:name, :email, :password, :password_confirmation]
+
   class << self
     def from_omniauth auth
       User.find_or_create_by email: auth.info.email do |user|

@@ -20,10 +20,4 @@ class UsersController < ApplicationController
     end
     redirect_to @user
   end
-
-  private
-  def user_params
-    params.require(:user).permit :email, :name, :password,
-     :password_confirmation, :current_password
-  end
 end
