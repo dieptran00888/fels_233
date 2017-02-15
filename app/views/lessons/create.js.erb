@@ -1,1 +1,5 @@
-$('.lessons-table-header').after('<%= j render "lesson", lesson: @lesson %>');
+<% if @lesson.category.words.count >= @lesson.category.word_per_lesson %>
+  $('.lessons-table-header').after('<%= j render "lesson", lesson: @lesson %>');
+<% else %>
+  alert('Not enough words to create lesson');
+<% end %>

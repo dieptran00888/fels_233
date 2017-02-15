@@ -3,10 +3,13 @@ class CategoriesController < ApplicationController
 
   before_action :find_word, only: :show
 
+  include CategoryUtils
+
   def index
     @search = Category.search params[:q]
     @categories = @search.result.paginate page: params[:page],
       per_page: Settings.per_page_users
+    words_count
   end
   
   def show

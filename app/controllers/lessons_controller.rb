@@ -12,7 +12,7 @@ class LessonsController < ApplicationController
 
   def update
     if @lesson.finished?
-      flash[:danger] = t "controllers.lessons.lesson_finished_error_message"
+      flash[:success] = t "controllers.lessons.lesson_finished_message"
     else
       @lesson.assign_attributes lesson_params
       save_fields

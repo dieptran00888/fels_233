@@ -73,7 +73,7 @@ en:
   button_delete: "Delete"
   controllers:
     lessons:
-      lesson_finished_error_message: "Fail"
+      lesson_finished_message: "Lesson has finished!"
       category_not_found: "Category not found"
   helpers:
     lessons_helper:
@@ -86,8 +86,8 @@ en:
   button_finish: "Finish"
   categories:
     show:
-      label_word_per_lesson: "Words per lesson"
-      duration_title: "Duration"
+      label_word_per_lesson: "Words per lesson: %{word_per_lesson}"
+      duration_title: "Duration (minutes): %{duration}"
       link_words: "Words"
       link_lessons: "Lessons"
       lessons_table_created_date: "Created date"
@@ -98,7 +98,10 @@ en:
     index:
       link_category: "Categories"
     category:
-      learn_button: "Learn"
+      learn_button: "LEARN"
+      words_learn: "Words Learn"
+      percent: "%"
+      complete: "complete"
     search_form:
       search_button: "Search"
   create_lesson: "Create Lesson"
