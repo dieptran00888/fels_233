@@ -37,6 +37,11 @@ class Word < ApplicationRecord
       l.user_id = ? AND l.category_id = ? AND a.is_correct = ?)",
         user_id, category_id, true}
 
+  scope :all_learned_words, ->(user_id){
+    where "words.id IN (SELECT r.word_id FROM results r JOIN lessons l
+      ON r.lesson_id = l.id JOIN answers a ON r.answer_id = a.id WHERE
+      l.user_id = ? AND a.is_correct = ?)", user_id, true}
+
   class << self
     def search search_value, category_id
       words = if search_value

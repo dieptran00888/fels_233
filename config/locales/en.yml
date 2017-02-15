@@ -52,6 +52,9 @@ en:
       link_login: "Login"
       link_logout: "Logout"
       link_signup: "Sign up"
+      categories: "Categories"
+      profile: "Profile"
+      sign_out: "Sign out"
   static_pages:
     about:
       title: "About"
@@ -59,6 +62,13 @@ en:
     home:
       title: "Home"
       content: "Home page"
+    index:
+      all: "Activities"
+      categories: "Categories"
+    header_homepage:
+      logo: "FELS"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
   change_config_email:
     "please-change-me-at-config-initializers-devise@example.com"
   button_edit: "Edit"
@@ -144,3 +154,4 @@ en:
       create_new_category: "Create category"
       confirm_delete_message: "You sure?"
       deletebutton: "DELETE"
+  learnt_words: " Words Learn"

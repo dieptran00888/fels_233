@@ -13,11 +13,14 @@
               class: "w3-circle nht-profile-avatar", alt: "Avatar" %>
           </p>
           <div class="nht-follow-detail">
-            <span class="nht-followed">
+            <span class="followed-profile">
               <%= current_user.following.size %> <%= t "user.followed" %>
             </span>
-            <span class="nht-follower">
+            <span class="follower-file">
               <%= current_user.followers.size %> <%= t "user.followers" %>
+            </span>
+            <span class="words-learn">
+              <%= @learnt_words.size %><%= t "learnt_words" %>
             </span>
             <div class="clearfix"></div>
           </div>
@@ -86,24 +89,23 @@
       </div>
       <br>
 
-      <!-- Interests -->
-      <div class="w3-card-2 w3-round w3-white w3-hide-small">
-        <div class="w3-container">
-          <p><%= t "profile.interests" %></p>
-        </div>
-      </div>
-      <br>
-    <!-- End Left Column -->
     </div>
     <!-- Middle Column -->
     <div class="w3-col m7">
-      <!-- End Middle Column -->
+      <div class="w3-card-2 w3-round w3-white content-mid">
+        <h2><%= t ".categories" %></h2>
+        <div class="categories-content">
+          <% @courses.each do |course| %>
+            <%= render "categories/category", category: course %>
+          <% end %>
+        </div>
+      </div>
     </div>
     <!-- Right Column -->
      <div class="w3-col m2 td">
       <div class="w3-card-2 w3-round w3-white w3-center">
         <div class="nht-activity">
-          <h5><%= t "activity.all" %></h5>
+          <h5><%= t ".all" %></h5>
           <% @activities.each do |activity| %>
             <li><%= render "activities/activity", activity: activity %></li>
           <% end %>

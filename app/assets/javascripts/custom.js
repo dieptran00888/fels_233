@@ -35,6 +35,14 @@ $(document).on('turbolinks:load', function() {
     $('#word-search-form').submit();
   });
 
+  var p;
+  $('.progress-bar-warning').each(function () {
+    p = $(this).html();
+    $(this).css('width', p);
+    $(this).append(' complete');
+
+  });
+
   $('input:radio').change(function () {
     $('#number-select').html($(":radio:checked").length);
   })
@@ -83,3 +91,8 @@ function countdown() {
     $minutes--;
   }
 }
+
+$(document).ready('onload',function () {
+  $('.progress-bar-warning').append(' complete');
+  $('.progress-bar-warning').css('width', p);
+});

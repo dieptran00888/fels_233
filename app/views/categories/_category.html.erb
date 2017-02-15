@@ -13,9 +13,11 @@
   </div>
   <div class="progress">
     <div class="progress-bar progress-bar-warning">
-      <%=
-        "#{@words_count[category.id]*100/category.words.size}#{t ".percent"}"
-      %>
+      <% if category.words.any? %>
+        <%=
+          "#{@words_count[category.id]*100/category.words.size}#{t ".percent"}"
+        %>
+      <% end %>
     </div>
   </div>
   <%= link_to t(".learn_button"), category, class: "btn btn-success" %>
