@@ -1,0 +1,6 @@
+<%= search_form_for @search, class: "input-group" do |f| %>
+  <p>
+    <%= f.text_field :name_cont, placeholder: t("search") %>
+  </p>
+  <span class="glyphicon glyphicon-search"></span>
+<% end %>
