@@ -16,6 +16,7 @@ class LessonsController < ApplicationController
     else
       @lesson.assign_attributes lesson_params
       save_fields
+      create_activity current_user.id, @lesson.id
     end
     redirect_to @lesson.category
   end
@@ -28,6 +29,11 @@ class LessonsController < ApplicationController
   private
   def lesson_params
     params.require(:lesson).permit :id, results_attributes: [:answer_id, :id]
+  end
+
+  def create_activity user_id, target_id
+    Activity.create action_type: Activity.types[:finished_lesson],
+      user_id: user_id, target_id: target_id
   end
   
   def find_category

@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :load_data
   def show
     if valid_page?
       render template: "static_pages/#{params[:page]}"
@@ -11,5 +12,8 @@ class StaticPagesController < ApplicationController
   def valid_page?
     File.exist? Pathname.new Rails.root +
       "app/views/static_pages/#{params[:page]}.html.erb"
+  end
+  def load_data
+    @activities = Activity.all
   end
 end

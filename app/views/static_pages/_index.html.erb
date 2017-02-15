@@ -94,10 +94,22 @@
       </div>
       <br>
     <!-- End Left Column -->
-
+    </div>
     <!-- Middle Column -->
-
+    <div class="w3-col m7">
+      <!-- End Middle Column -->
+    </div>
     <!-- Right Column -->
+     <div class="w3-col m2 td">
+      <div class="w3-card-2 w3-round w3-white w3-center">
+        <div class="nht-activity">
+          <h5><%= t "activity.all" %></h5>
+          <% @activities.each do |activity| %>
+            <li><%= render "activities/activity", activity: activity %></li>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <!-- End Right Column -->
   <!-- End Grid -->
   </div>
