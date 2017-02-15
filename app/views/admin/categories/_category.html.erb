@@ -1,13 +1,29 @@
 <% if category.present? %>
-  <div id="category-item-<%= category.id %>">
-    <%= category.name %>
-    <%= category.duration %>
-    <%= category.word_per_lesson %>
-    <%= link_to t("button_edit"), edit_admin_category_path(category),
-      data: {toggle: "modal", target: "#category-modal"},
-      class: "btn btn-primary" %>
-    <%= link_to t("button_delete"), [:admin, category], method: :delete, data: {
-      confirm: t("confirm_delete_message")}, remote: true,
-      class: "btn btn-danger" %>
+  <div id="category-item-<%= category.id %>" class="category-item">
+    <div class="row category">
+      <div class="category-item-content col-md-12">
+       <img class="category-img pull-left" src="https://goo.gl/DJ6SNV">
+        <div class="category-item-name">
+          <%= link_to [:admin, category] do %>
+            <h4><strong><%= category.name %></strong></h4>
+          <% end %>
+          <p class="category-description"></p>
+        </div>
+      </div>
+      <div class="item-footer col-md-12">
+        <div class="col-md-9">
+          <p><%= t("admin.duration_title") %><%= category.duration %></p>
+          <p><%= t("admin.label_word_per_lesson") %><%= category.word_per_lesson  %></p>
+        </div>
+        <div class="col-md-3">
+          <%= link_to t("button_edit"), edit_admin_category_path(category),
+            class: "btn btn-primary", "data-toggle": "modal",
+            "data-target": "#category-modal" %>
+          <%= link_to t("button_delete"), [:admin, category], method: :delete, data: {
+            confirm: t("confirm_delete_message")}, remote: true,
+            class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>

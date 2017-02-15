@@ -1,0 +1,27 @@
+<% provide :title, t("admin.index.title") %>
+<h1><%= t "admin.index.dashboard" %></h1>
+
+<table class="table table-hover">
+  <tr>
+    <th><%= t "admin.index.stt" %></th>
+    <th><%= t "admin.index.name" %></th>
+    <th><%= t "admin.index.email" %></th>
+  </tr>
+  <% @users.each.with_index do |user, index| %>
+    <tr>
+      <td> <%= index + 1 %> </td>
+      <td> <%= user.name %> </td>
+      <td> <%= user.email %> </td>
+      <td>
+        <span>
+          <%= link_to t("admin.deletebutton"),
+            admin_user_url(user), method: :delete,
+            data: {confirm: t("admin.confirm_delete_message")},
+            class:"btn btn-danger", remote: true %>
+        </span>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate %>

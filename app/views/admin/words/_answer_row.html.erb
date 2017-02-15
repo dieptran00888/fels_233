@@ -1,7 +1,13 @@
-<div class="answer-row">
-  <%= f.check_box :is_correct, class: "check-correct" %>
-  <%= f.text_field :content, class: "form-control" %>
-  <%= f.hidden_field :_destroy %>
+<div class="col-md-12 answer-row">
+  <div class="col-md-1 text-center pagination-centered">
+    <%= f.check_box :is_correct, class: "check-correct" %>
+  </div>
+  <div class="col-md-9"> 
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <div class="col-md-2 text-center">
+    <%= f.hidden_field :_destroy %>
+  </div>
   <span class="btn btn-danger remove-answer-row">
     <%= t "button_remove" %>
   </span>

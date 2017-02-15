@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :words, only: [:create, :update, :destroy]
+    resources :users, only: [:index, :show, :destroy]
   end
   resources :categories, only: [:index, :show] do
     resources :lessons, only: :show
   end
   resources :lessons, only: [:create, :update]
-
   resources :users
   resources :relationships, only: [:create, :destroy]
   resources :activities

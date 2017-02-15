@@ -10,7 +10,7 @@ module ApplicationHelper
     fields = f.fields_for(association, new_answer, child_index: id) do |builder|
       render "admin/words/answer_row", f: builder
     end
-    link_to name, "#", class: "btn btn-info btn-add-answer",
+    link_to name, "#", class: "btn btn-link btn-add-answer",
       data: {id: id, fields: fields.gsub("\n", "")}
   end
 end
