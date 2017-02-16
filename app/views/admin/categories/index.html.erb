@@ -1,10 +1,9 @@
 <h1>
-  <%= t ".category_index_title" %>
+  <%= t "admin.category_index_title" %>
 </h1>
-<%= link_to t(".create_new_category"), new_admin_category_path,
+<%= link_to t("admin.create_new_category"), new_admin_category_path,
   data: {toggle: "modal", target: "#category-modal"},
   class: "btn btn-primary" %>
-
 <div id="category-index-list">
   <% if @categories.any? %>
     <% @categories.each do |category| %>

@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && !current_user.is_admin? %>
   <div class="w3-top">
    <ul class="w3-navbar w3-theme-d2 w3-left-align w3-large">
     <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
