@@ -18,7 +18,6 @@ function myFunction(id) {
       x.className = x.className.replace('w3-show', '');
     }
   }
-});
 
 function myFunction(id) {
   var x = document.getElementById(id);

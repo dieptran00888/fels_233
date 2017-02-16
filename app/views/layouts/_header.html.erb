@@ -12,12 +12,12 @@
       <%= link_to categories_path, class: "w3-padding-large" do %>
         <i class="glyphicon glyphicon-th-list"></i>
         <%= t ".categories" %>
-        <div class="w3-dropdown-content w3-white w3-card-4">
-          <% Category.all.each do |category| %>
-            <%= link_to category.name, category %>
-          <% end %>
-        </div>
       <% end %>
+      <div class="w3-dropdown-content w3-white w3-card-4">
+        <% Category.all.each do |category| %>
+          <%= link_to category.name, category %>
+        <% end %>
+      </div>
     </li>
 
     <li class="w3-hide-small w3-right w3-dropdown-hover">
