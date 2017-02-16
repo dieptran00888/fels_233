@@ -99,7 +99,6 @@ html{
 
 body {
   overflow-x: hidden;
-  padding-bottom: 100px;
 }
 
 .td-nav {
@@ -311,6 +310,8 @@ body {
 .td-img {
   height:25px;
   width:25px;
+  margin-bottom: 10px;
+  margin-right: 58px;
 }
 .width {
   width: 100%;
@@ -368,6 +369,7 @@ footer {
 
 .word-item-panel {
   display: none;
+  margin-bottom: 30px;
 }
 
 .item-header {
@@ -455,6 +457,8 @@ footer {
 
 .w3-col.m2.td {
   float: right;
+  position: fixed;
+  right: 60px;
 }
 
 #lessons-content {
@@ -472,9 +476,9 @@ footer {
 .category {
   padding: 15px;
   margin-top: 40px;
-  background-color: whitesmoke;
+  background-color: #e9ebee;
   border-radius: 2px;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.69);
   background-image: url("https://goo.gl/N0LE5z");
 }
 
@@ -594,4 +598,66 @@ footer {
 
 .followed-profile, .follower-file {
   padding-right: 22px;
+}
+
+.admin-category-show {
+  margin-top: 20px;
+}
+
+.answer-row {
+  padding-top: 20px;
+}
+
+.new_word {
+  .btn.btn-primary {
+    width: 59%;
+    margin-left: 185px;
+  }
+}
+
+#words-content {
+  text-align: center;
+  .btn.btn-info, .btn.btn-danger {
+    //float: right;
+    width: 20%;
+  }
+}
+
+.word-item {
+  clear: both;
+}
+
+#div-new-word {
+  margin-bottom: 30px;
+}
+
+.word-item-flip {
+  width: 70%;
+  margin: auto;
+}
+
+.nht-home-background {
+  background-image: url(https://goo.gl/bvH3jB);
+  height: 750px;
+}
+
+.home-nav {
+  padding-left: 67px;
+}
+
+.navbar-inverse {
+  background: #00897b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li:hover {
+  background: whitesmoke;
+  a {
+    color: black;
+  }
 }

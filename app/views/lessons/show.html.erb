@@ -1,3 +1,6 @@
+<% if current_user.is_admin? %>
+  <%= render "layouts/header_admin" %>
+<% end %>
 <div class="container">
   <%= form_for @lesson do |f| %>
     <div class="lesson-progress-column">
@@ -9,8 +12,13 @@
           </span>
         </div>
         <div class="btn-result">
-          <%= link_to t("back"), @lesson.category,
-            class: "btn btn-primary btn-back" %>
+          <% if current_user.is_admin? %>
+            <%= link_to t("back"), admin_path,
+              class: "btn btn-primary btn-back" %>
+          <% else %>
+            <%= link_to t("back"), @lesson.category,
+              class: "btn btn-primary btn-back" %>
+          <% end %>
         </div>
       <% else %>
         <div class="sidebar-result">

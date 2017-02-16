@@ -10,3 +10,26 @@ en:
     fail: "Fail"
     unfollow: "Unfollow"
     follow: "Follow"
+  admin:
+    words:
+      word_form:
+        content_label: "Content"
+    categories:
+      show:
+        words_management: "Words Management"
+    users:
+      index:
+        stt: "STT"
+        name: "Name"
+        email: "Email"
+        deletebutton: "Delete"
+        confirm_delete_message: "You sure ?"
+        user_management: "Users Management"
+        option: "Option"
+  layouts:
+    header_admin:
+      home: "Home"
+      categories: "Categories"
+      users: "Users"
+      login: "Login"
+  logout: "Logout"

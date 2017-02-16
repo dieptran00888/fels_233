@@ -1,0 +1,20 @@
+<header class="navbar navbar-inverse">
+  <div class="container">
+    <nav>
+      <%= link_to image_tag("http://recruit.framgia.vn/wp-content/themes/framgia-vn/css/images/logo/framgia-logo.png"),
+        root_path, id: "logo" %>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to t(".categories"), admin_categories_path %></li>
+          <li><%= link_to t(".users"), admin_users_path %></li>
+          <li><%= link_to t("logout"),
+            destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to t(".home"), root_path %></li>
+          <li><%= link_to t(".categories"), categories_path %></li>
+          <li><%= link_to t(".login"), new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

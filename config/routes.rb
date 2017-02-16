@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#index"
   get "static_pages/*page", to: "static_pages#show"
 
+  get :admin, to: 'admin/dashboard#index'
   namespace :admin do
     resources :categories
     resources :words, only: [:create, :update, :destroy]

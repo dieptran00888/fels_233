@@ -1,18 +1,21 @@
-<div id="div-show-category">
-  <div id="div-new-word">
-    <%= render "admin/words/word_form", word: @word,
-      category_id: @category.id %>
-  </div>
-  <div id="div-list-word">
-    <div id="words-content">
-      <% if @support.words.any? %>
-        <% @support.words.each do |word| %>
-          <%= render "admin/words/word", word: word %>
+<div class="container admin-category-show">
+  <h1><%= t ".words_management" %></h1>
+  <div id="div-show-category">
+    <div id="div-new-word">
+      <%= render "admin/words/word_form", word: @word,
+        category_id: @category.id %>
+    </div>
+    <div id="div-list-word">
+      <div id="words-content">
+        <% if @support.words.any? %>
+          <% @support.words.each do |word| %>
+            <%= render "admin/words/word", word: word %>
+          <% end %>
+          <div class="text-center">
+            <%= will_paginate @support.words %>
+          </div>
         <% end %>
-        <div class="text-center">
-          <%= will_paginate @support.words %>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

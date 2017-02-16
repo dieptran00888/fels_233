@@ -37,6 +37,12 @@ en:
         label_word_per_lesson: "Words  per lesson"
       edit_form:
         edit_category_title: "Edit Category"
+      index:
+        category_index_title: "Categories Management"
+        create_new_category: "Create category"
+      category:
+        duration_title: "Duration (minutes): %{duration}"
+        label_word_per_lesson: "Words per lesson: %{words_per_lesson}"
     words:
       word_form:
         content_label: "Content"
@@ -135,23 +141,5 @@ en:
       learn_checkbox: "learn"
       all: "All"
       not_learned_checkbox: "Not Learn"
-  admin:
-    index:
-      name: "NAME"
-      email: "Email"
-      stt: "STT"
-      dashboard: "Manager User"
-      title: "Manager User"
-      duration_title: "Duration (minute): "
-      label_word_per_lesson: "Words per lesson: "
-      content_label: "Content"
-      button_add_answer: "Add answer"
-      button_add_word: "Add word"
-      delete_category_success_message: "Category deleted"
-      create_new_category_success_msg: "New category created successfully!"
-      edit_category_success_message: "Updated!"
-      category_index_title: "Categories Management"
-      create_new_category: "Create category"
-      confirm_delete_message: "You sure?"
-      deletebutton: "DELETE"
+
   learnt_words: " Words Learn"

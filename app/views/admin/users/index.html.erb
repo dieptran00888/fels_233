@@ -1,27 +1,32 @@
-<% provide :title, t("admin.index.title") %>
-<h1><%= t "admin.index.dashboard" %></h1>
+<%= render "layouts/header_admin" %>
+<div class="container">
+  <h1><%= t ".user_management" %></h1>
 
-<table class="table table-hover">
-  <tr>
-    <th><%= t "admin.index.stt" %></th>
-    <th><%= t "admin.index.name" %></th>
-    <th><%= t "admin.index.email" %></th>
-  </tr>
-  <% @users.each.with_index do |user, index| %>
+  <table class="table table-hover table-responsive">
     <tr>
-      <td> <%= index + 1 %> </td>
-      <td> <%= user.name %> </td>
-      <td> <%= user.email %> </td>
-      <td>
-        <span>
-          <%= link_to t("admin.deletebutton"),
-            admin_user_url(user), method: :delete,
-            data: {confirm: t("admin.confirm_delete_message")},
-            class:"btn btn-danger", remote: true %>
-        </span>
-      </td>
+      <th><%= t ".stt" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".email" %></th>
+      <th><%= t ".option" %></th>
     </tr>
-  <% end %>
-</table>
+    <% @users.each.with_index do |user, index| %>
+      <% unless user.is_admin %>
+        <tr>
+          <td> <%= index %> </td>
+          <td> <%= user.name %> </td>
+          <td> <%= user.email %> </td>
+          <td>
+            <span>
+              <%= link_to t(".deletebutton"),
+                admin_user_url(user), method: :delete,
+                data: {confirm: t(".confirm_delete_message")},
+                class: "btn btn-danger", remote: true %>
+            </span>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
 
-<%= will_paginate %>
+  <%= will_paginate %>
+</div>

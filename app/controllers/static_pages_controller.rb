@@ -8,6 +8,14 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def index
+    if user_signed_in?
+      if current_user.is_admin?
+        redirect_to admin_path
+      end
+    end
+  end
+
   private
   def valid_page?
     File.exist? Pathname.new Rails.root +

@@ -1,24 +1,31 @@
 <% if user_signed_in? && !current_user.is_admin? %>
   <div class="w3-top">
    <ul class="w3-navbar w3-theme-d2 w3-left-align w3-large">
-    <li>
-      <%= link_to root_path, class: "w3-padding-large w3-theme-d4" do %>
+    <li class="home-nav">
+      <%= link_to root_path, class: "w3-padding-large" do %>
         <i class="fa fa-home w3-margin-right"></i>
         <%= t :home %>
       <% end %>
     </li>
 
-    <li title="Categories">
-      <%= link_to categories_path, class: "w3-padding-large w3-theme-d4" do %>
+    <li title="Categories" class="w3-dropdown-hover">
+      <%= link_to categories_path, class: "w3-padding-large" do %>
         <i class="glyphicon glyphicon-th-list"></i>
         <%= t ".categories" %>
+        <div class="w3-dropdown-content w3-white w3-card-4">
+          <% Category.all.each do |category| %>
+            <%= link_to category.name, category %>
+          <% end %>
+        </div>
       <% end %>
     </li>
 
     <li class="w3-hide-small w3-right w3-dropdown-hover">
-      <%= link_to "", class: "w3-padding-large w3-hover-white"%>
-        <%= image_tag "https://goo.gl/FmJsq6", class: "w3-circle td-img" %>
-      <div class="w3-dropdown-content w3-white w3-card-4 td-dropdown-fix">
+      <%= link_to current_user , class: "w3-padding-large" do %>
+        <i class="glyphicon glyphicon-user"></i>
+        <%= current_user.name %>
+    <% end %>
+      <div class="w3-dropdown-content w3-white w3-card-4">
         <%= link_to t(".profile"), current_user %>
         <%= link_to t(".sign_out"), destroy_user_session_path, method: :delete %>
       </div>

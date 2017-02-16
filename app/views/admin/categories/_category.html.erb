@@ -12,8 +12,10 @@
       </div>
       <div class="item-footer col-md-12">
         <div class="col-md-9">
-          <p><%= t("admin.duration_title") %><%= category.duration %></p>
-          <p><%= t("admin.label_word_per_lesson") %><%= category.word_per_lesson  %></p>
+          <p><%= t(".duration_title", duration: category.duration) %></p>
+          <p><%= t(".label_word_per_lesson", words_per_lesson: category
+            .word_per_lesson)
+          %></p>
         </div>
         <div class="col-md-3">
           <%= link_to t("button_edit"), edit_admin_category_path(category),
